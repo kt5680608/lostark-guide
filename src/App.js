@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { BrowserRouter, Route } from "react-router-dom";
+import {
+    MainPage,
+    GuidePage,
+    TermPage,
+    HomeworkPage,
+    NaesilPage,
+    LevelPage,
+    DayContentPage,
+    WeekContentPage,
+} from "./pages";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <BrowserRouter>
+            <Route exact path="/" component={MainPage} />
+            <Route exact path="/guide" component={GuidePage} />
+            <Route path="/term" component={TermPage} />
+            <Route path="/homework" component={HomeworkPage} />
+            <Route path="/guide/naesil" component={NaesilPage} />
+            <Route path="/guide/level" component={LevelPage} />
+            <Route path="/dayContent" component={DayContentPage} />
+            <Route path="/weekContent" component={WeekContentPage} />
+        </BrowserRouter>
+    );
 }
 
 export default App;
