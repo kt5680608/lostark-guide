@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Logo, Navbar } from "../../components";
 import { weekContent } from "../../data";
+import { useRecoilValue, useRecoilState } from "recoil";
 import {
     Page,
     QuestionIcon,
@@ -42,6 +43,7 @@ function WeekContentPage() {
     const [openDejavu, setOpenDejavu] = useState(false);
     const [openCommanderRaid, setOpenCommanderRaid] = useState(false);
     const [itemName, setItemName] = useState("");
+
     return (
         <Page>
             <MainContainer>

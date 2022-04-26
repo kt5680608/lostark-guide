@@ -1,5 +1,6 @@
 import styled, { createGlobalStyle } from "styled-components";
 import { Box } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import {
     BsFillCaretRightFill,
     BsFillCaretDownFill,
@@ -8,7 +9,6 @@ import {
     BsDiscord,
     BsFillQuestionCircleFill,
 } from "react-icons/bs";
-import { motion } from "framer-motion";
 export const GlobalStyle = createGlobalStyle`
     :root {
     --g-color-blue: #0057ff;
@@ -193,7 +193,7 @@ export const SubTitle = styled.h2`
     margin: 12px 0 12px 0;
 `;
 
-export const SubtitleContainer = styled(motion.div)`
+export const SubtitleContainer = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -211,6 +211,8 @@ export const HighlightBox = styled(Box)`
         props.direction ? `${props.direction}` : "column"};
     align-items: ${(props) =>
         props.alignItems ? `${props.alignItems}` : "center"};
+    justify-content: ${(props) =>
+        props.justifyContent ? `${props.justifyContent}` : "center"};
     cursor: ${(props) => (props.cursor ? `${props.cursor}` : "default")};
     &:hover {
         background-color: ${(props) =>
@@ -260,7 +262,7 @@ export const MotionDefaultBox = styled(motion.div)`
         props.alignItems ? `${props.alignItems}` : "center"};
     margin: ${(props) => (props.margin ? props.margin : "12px 0px 12px 0px")};
     background-size: cover;
-    min-width: 96px;
+    min-width: 120px;
     max-height: ${(props) => props.maxWidth};
     &:hover {
         background-color: ${(props) =>
@@ -281,7 +283,7 @@ export const SubMenuTitle = styled.h2`
 `;
 
 export const Content = styled.p`
-    font-size: 0.9rem;
+    font-size: ${(props) => (props.fontSize ? props.fontSize : "0.9rem")};
     line-height: 1.5;
     color: ${(props) =>
         props.color ? `var(--g-color-highlight-${props.color})` : "white"};

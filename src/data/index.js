@@ -1,3 +1,4 @@
+import { atom } from "recoil";
 export const islandHeart = [
     {
         name: "외로운 섬 오페르",
@@ -1022,4 +1023,24 @@ export const GoldSupplier = [
             },
         ],
     },
+];
+
+export const dayWork = [
+    { name: "카오스 던전" },
+    { name: "가디언 토벌" },
+    { name: "일일 에포나 의뢰" },
+];
+export const weekWork = [
+    { name: "발탄 노말" },
+    { name: "발탄 하드" },
+    { name: "비아키스 노말" },
+    { name: "비아키스 하드" },
+    { name: "쿠크세이튼" },
+    { name: "아브렐슈드 노말" },
+    { name: "아브렐슈드 하드" },
+    { name: "도전 가디언 토벌" },
+    { name: "어비스 던전" },
+    { name: "어비스 레이드" },
+    { name: "도전 어비스 던전" },
+    { name: "주간 에포나 의뢰" },
 ];

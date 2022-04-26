@@ -12,8 +12,13 @@ import {
     GuideCategoryName,
     MarginBox,
 } from "./style";
+import { atom, useRecoilValue } from "recoil";
 import { Link } from "react-router-dom";
 function GuidePage() {
+    const guideState = atom({
+        key: "guideKey",
+        default: 0,
+    });
     return (
         <Page>
             <MainContainer>
@@ -53,21 +58,21 @@ function GuidePage() {
                         </Link>
                     </GuideCategoryContainer>
                     <GuideCategoryContainer grid="1fr 1fr 1fr">
-                        <GuideCategoryBox
-                            width="97%"
-                            height="30vh"
-                            backgroundImage="url('https://w.namu.la/s/5ac297594a07639f77cf992808e5a6d5e7cec3ca6fbf087be47e271532aedb2d155b9b31fb3467ea50dcee2265eeeb6579f61e7040c466dc666102a5406f8b91dfbcf97416fc7a0ede54f3ed0fb07be3')"
-                            backgroundPosition="center"
-                            backgroundRepeat="no-repeat"
-                        >
-                            <OverlayBox>
-                                <Link to="/weekContent">
+                        <Link to="/weekContent">
+                            <GuideCategoryBox
+                                width="97%"
+                                height="30vh"
+                                backgroundImage="url('https://w.namu.la/s/5ac297594a07639f77cf992808e5a6d5e7cec3ca6fbf087be47e271532aedb2d155b9b31fb3467ea50dcee2265eeeb6579f61e7040c466dc666102a5406f8b91dfbcf97416fc7a0ede54f3ed0fb07be3')"
+                                backgroundPosition="center"
+                                backgroundRepeat="no-repeat"
+                            >
+                                <OverlayBox>
                                     <GuideCategoryName>
                                         주간 컨텐츠
                                     </GuideCategoryName>
-                                </Link>
-                            </OverlayBox>
-                        </GuideCategoryBox>
+                                </OverlayBox>
+                            </GuideCategoryBox>
+                        </Link>
                         <Link to="/dayContent">
                             <GuideCategoryBox
                                 width="97%"
