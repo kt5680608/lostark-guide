@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Navbar, Logo } from "../../components";
-import { HomeworkIcon } from "../../components/navbar/style";
-import { AddIcon } from "@chakra-ui/icons";
+import { AddIcon, DeleteIcon } from "@chakra-ui/icons";
 import { dayWork, weekWork } from "../../data";
 import {
     Page,
@@ -48,27 +47,56 @@ import {
     Checkbox,
     Stack,
 } from "@chakra-ui/react";
-import { IconButton, IconButtonContainer, GridContainer } from "./style";
+import {
+    IconButton,
+    IconButtonContainer,
+    GridContainer,
+    HomeWorkTitleBox,
+} from "./style";
 function HomeworkPage() {
     const [dayWorkState, setDayWorkState] = useState();
     const [weekWorkState, setWeekWorkState] = useState();
+    const [allState, setAllState] = useState();
+    const [handleDelete, setHandleDelete] = useState(false);
     const changeWeekState = (item) => {
         setWeekWorkState(item);
     };
     const changeDayState = (item) => {
         setDayWorkState(item);
     };
+    const changeAllState = (item) => {
+        setAllState(item);
+    };
     useEffect(() => {
-        console.log(dayWorkState);
-        console.log(weekWorkState);
-    }, [dayWorkState, weekWorkState]);
+        setDayWorkState((prevState) => prevState?.map(() => false));
+        setWeekWorkState((prevState) => prevState?.map(() => false));
+        setHandleDelete(false);
+    }, [handleDelete]);
     return (
         <Page>
             <MainContainer>
                 <Navbar />
                 <Logo />
                 <SubMainContainer>
-                    <SubTitle>숙제 검사</SubTitle>
+                    <HomeWorkTitleBox>
+                        <SubTitle
+                            onClick={() => {
+                                console.log(dayWorkState);
+                                console.log(weekWorkState);
+                            }}
+                        >
+                            숙제 검사
+                        </SubTitle>
+
+                        <IconButton
+                            onClick={() => {
+                                setAllState(!allState);
+                                setHandleDelete(true);
+                            }}
+                        >
+                            <DeleteIcon color="white" />
+                        </IconButton>
+                    </HomeWorkTitleBox>
                     <BasicUsage
                         weekWorkFunc={(item) => {
                             changeWeekState(item);
@@ -76,6 +104,10 @@ function HomeworkPage() {
                         dayWorkFunc={(item) => {
                             changeDayState(item);
                         }}
+                        changeAllStateFunc={(item) => {
+                            changeAllState(item);
+                        }}
+                        allState={allState}
                     />
                     {dayWork.map(
                         (item, idx) =>
@@ -170,14 +202,12 @@ function BasicUsage(props) {
     const submitWorkArr = () => {
         props.weekWorkFunc(weekWorkArr);
         props.dayWorkFunc(dayWorkArr);
-        setDayWorkArr((prevState) =>
-            prevState.map((item, idx) => item !== false && !item)
-        );
-        setWeekWorkArr((prevState) =>
-            prevState.map((item, idx) => item !== false && !item)
-        );
         onClose();
     };
+    useEffect(() => {
+        setDayWorkArr((prevState) => prevState.map(() => false));
+        setWeekWorkArr((prevState) => prevState.map(() => false));
+    }, [props.allState]);
     return (
         <>
             <IconButtonContainer onClick={onOpen}>

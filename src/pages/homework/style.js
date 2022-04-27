@@ -26,3 +26,10 @@ export const GridContainer = styled.div`
     grid-template-columns: 1fr 1fr;
     gap: 48px;
 `;
+
+export const HomeWorkTitleBox = styled.div`
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+`;
