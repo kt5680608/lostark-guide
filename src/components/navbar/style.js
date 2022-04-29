@@ -10,15 +10,15 @@ export const MainNavbarContainer = styled(Box)`
     box-shadow: 0 -4px 16px rgb(0 0 0 / 32%);
     display: flex;
     justify-content: center;
-    width: 50vw;
-    @media (max-width: 426px) {
-        width: 80vw;
-    }
 `;
 
 export const NavbarContentContainer = styled(Box)`
     height: 100%;
     display: flex;
+    min-width: 50vw;
+    @media (max-width: 426px) {
+        min-width: 80vw;
+    }
     justify-content: space-around;
     align-items: center;
 `;

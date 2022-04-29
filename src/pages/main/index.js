@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Navbar, Logo } from "../../components";
+import { IframeContainer } from "./style";
 import Youtube from "react-youtube";
 import {
     Page,
@@ -91,15 +92,17 @@ function MainPage() {
                         ))}
                     </Grid>
                     <SubTitle>하이퍼 익스프레스 추천 가이드</SubTitle>
-                    <iframe
-                        width="100%"
-                        height="360px"
-                        src="https://www.youtube.com/embed/33iK9DTQMFE"
-                        title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen
-                    ></iframe>
+                    <IframeContainer>
+                        <iframe
+                            width="100%"
+                            height="360px"
+                            src="https://www.youtube.com/embed/33iK9DTQMFE"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                        />
+                    </IframeContainer>
                     <SubTitle>
                         로스트아크 통합 디스코드에 대해 아시나요?
                     </SubTitle>
@@ -117,12 +120,9 @@ function MainPage() {
                             <Content>
                                 2. 음성채널을 이용한 원활한 브리핑
                             </Content>
-                            <Content>
-                                3. 로스트아크와 관련된 다양한 편의 기능 및 정보
-                                제공
-                            </Content>
+                            <Content>3. 다양한 편의 기능 및 정보 제공</Content>
                             <ContentHighlight marginTop={12} fontSize={1.1}>
-                                36만명이 넘는 모험가분들과 소통하세요!
+                                36만명의 모험가분들과 소통하세요!
                             </ContentHighlight>
 
                             <DefaultBox

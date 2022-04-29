@@ -129,6 +129,13 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
     }
+    iframe{
+        position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    }
 `;
 
 export const Page = styled.div`
@@ -265,7 +272,7 @@ export const MotionDefaultBox = styled(motion.div)`
         props.alignItems ? `${props.alignItems}` : "center"};
     margin: ${(props) => (props.margin ? props.margin : "12px 0px 12px 0px")};
     background-size: cover;
-    min-width: 120px;
+    min-width: 112px;
     max-height: ${(props) => props.maxWidth};
     &:hover {
         background-color: ${(props) =>
