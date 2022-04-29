@@ -147,6 +147,9 @@ export const MainContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media (max-width: 426px) {
+        width: 80vw;
+    }
 `;
 
 export const MarginBox = styled.div`
