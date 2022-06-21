@@ -396,7 +396,6 @@ export const IconBox = styled.div`
 export const Grid = styled(motion.div)`
     cursor: grab;
     display: flex;
-
     flex-direction: row;
     width: 100%;
     gap: 12px;

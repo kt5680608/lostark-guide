@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Navbar, Logo } from "../../components";
 import { IframeContainer } from "./style";
 import Youtube from "react-youtube";
+import { Modal, Popover } from "hoondesign";
 import {
     Page,
     QuestionIcon,
@@ -36,6 +37,13 @@ import {
 } from "../../globalStyles/globalStyles";
 import { Youtubers } from "../../data";
 function MainPage() {
+    const Children = () => {
+        return (
+            <div>
+                <p>안녕하세요</p>
+            </div>
+        );
+    };
     return (
         <Page>
             <MainContainer>
@@ -117,6 +125,10 @@ function MainPage() {
                             <Content>
                                 1. 파티, 레이드, 길드 구인 및 구직
                             </Content>
+                            <Modal
+                                modalButtonChildren="hihi"
+                                modalContentChildren={<Children />}
+                            ></Modal>
                             <Content>
                                 2. 음성채널을 이용한 원활한 브리핑
                             </Content>
