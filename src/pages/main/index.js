@@ -125,10 +125,7 @@ function MainPage() {
                             <Content>
                                 1. 파티, 레이드, 길드 구인 및 구직
                             </Content>
-                            <Modal
-                                modalButtonChildren="hihi"
-                                modalContentChildren={<Children />}
-                            ></Modal>
+
                             <Content>
                                 2. 음성채널을 이용한 원활한 브리핑
                             </Content>

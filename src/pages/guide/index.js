@@ -4,6 +4,7 @@ import {
     Page,
     MainContainer,
     SubMainContainer,
+    Box,
 } from "../../globalStyles/globalStyles";
 import {
     GuideCategoryBox,
