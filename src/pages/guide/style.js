@@ -1,5 +1,6 @@
 import styled from "styled-components";
-export const GuideCategoryBox = styled.div`
+import { Box } from "@chakra-ui/react";
+export const GuideCategoryBox = styled(Box)`
     border-radius: 16px;
     margin: 0 auto;
     display: flex;
